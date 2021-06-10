@@ -1,0 +1,299 @@
+2021-06-01 21:35:38 - restore_or_initdb - Invoking initdb
+The files belonging to this database system will be owned by user "postgres".
+This user must also own the server process.
+
+The database cluster will be initialized with locale "C.UTF-8".
+The default text search configuration will be set to "english".
+
+Data page checksums are disabled.
+
+fixing permissions on existing directory /var/lib/postgresql/data ... ok
+fixing permissions on existing directory /var/lib/postgresql/wal/pg_wal ... ok
+creating subdirectories ... ok
+selecting dynamic shared memory implementation ... posix
+selecting default max_connections ... 100
+selecting default shared_buffers ... 128MB
+selecting default time zone ... Asia/Seoul
+creating configuration files ... ok
+running bootstrap script ... ok
+performing post-bootstrap initialization ... ok
+syncing data to disk ... ok
+
+Success. You can now start the database server using:
+
+    pg_ctl -D /var/lib/postgresql/data -l logfile start
+
+2021-06-01 21:35:49 KST [52]: [60b629a4.34-1] @,app= [00000] LOG:  starting PostgreSQL 12.6 (Debian 12.6-1.pgdg100+1) on x86_64-pc-linux-gnu, compiled by gcc (Debian 8.3.0-6) 8.3.0, 64-bit
+2021-06-01 21:35:49 KST [52]: [60b629a4.34-2] @,app= [00000] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2021-06-01 21:35:49 KST [52]: [60b629a4.34-3] @,app= [00000] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+2021-06-01 21:35:49 KST [54]: [60b629a5.36-1] @,app= [00000] LOG:  database system was shut down at 2021-06-01 21:35:44 KST
+2021-06-01 21:35:49 KST [55]: [60b629a5.37-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:35:49 KST [55]: [60b629a5.37-2] postgres@postgres,app=[unknown] [57P03] FATAL:  the database system is starting up
+/var/run/postgresql:5432 - rejecting connections
+2021-06-01 21:35:49 KST [57]: [60b629a5.39-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:35:49 KST [57]: [60b629a5.39-2] postgres@postgres,app=[unknown] [57P03] FATAL:  the database system is starting up
+/var/run/postgresql:5432 - rejecting connections
+2021-06-01 21:35:49 KST [52]: [60b629a4.34-4] @,app= [00000] LOG:  database system is ready to accept connections
+2021-06-01 21:35:49 KST [64]: [60b629a5.40-1] @,app= [00000] LOG:  TimescaleDB background worker launcher connected to shared catalogs
+2021-06-01 21:35:50 KST [68]: [60b629a6.44-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:35:50 KST [68]: [60b629a6.44-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2021-06-01 21:35:50 KST [68]: [60b629a6.44-3] postgres@postgres,app=pg_isready [00000] LOG:  disconnection: session time: 0:00:00.001 user=postgres database=postgres host=[local]
+/var/run/postgresql:5432 - accepting connections
+2021-06-01 21:35:50 KST [69]: [60b629a6.45-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:35:50 KST [69]: [60b629a6.45-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres application_name=Patroni
+2021-06-01 21:35:50 - post_init - Creating extension TimescaleDB in template1 and postgres databases
+2021-06-01 21:35:50 KST [74]: [60b629a6.4a-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:35:50 KST [74]: [60b629a6.4a-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres application_name=psql
+2021-06-01 21:35:50 KST [75]: [60b629a6.4b-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:35:50 KST [75]: [60b629a6.4b-2] postgres@template1,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=template1 application_name=psql
+You are now connected to database "template1" as user "postgres".
+2021-06-01 21:35:50 KST [74]: [60b629a6.4a-3] postgres@postgres,app=psql [00000] LOG:  disconnection: session time: 0:00:00.097 user=postgres database=postgres host=[local]
+SET
+2021-06-01 21:35:50 KST [75]: [60b629a6.4b-3] postgres@template1,app=psql [00000] LOG:  statement: CREATE EXTENSION timescaledb;
+2021-06-01 21:35:52 KST [75]: [60b629a6.4b-4] postgres@template1,app=psql [01000] WARNING:  
+	WELCOME TO
+	 _____ _                               _     ____________  
+	|_   _(_)                             | |    |  _  \ ___ \ 
+	  | |  _ _ __ ___   ___  ___  ___ __ _| | ___| | | | |_/ / 
+	  | | | |  _ ` _ \ / _ \/ __|/ __/ _` | |/ _ \ | | | ___ \ 
+	  | | | | | | | | |  __/\__ \ (_| (_| | |  __/ |/ /| |_/ /
+	  |_| |_|_| |_| |_|\___||___/\___\__,_|_|\___|___/ \____/
+	               Running version 2.0.1
+	For more information on TimescaleDB, please visit the following links:
+	
+	 1. Getting started: https://docs.timescale.com/getting-started
+	 2. API reference documentation: https://docs.timescale.com/api
+	 3. How TimescaleDB is designed: https://docs.timescale.com/introduction/architecture
+	
+	Note: TimescaleDB collects anonymous reports to better understand and assist our users.
+	For more information and how to disable, please see our docs https://docs.timescaledb.com/using-timescaledb/telemetry.
+	
+2021-06-01 21:35:52 KST [75]: [60b629a6.4b-5] postgres@template1,app=psql [01000] CONTEXT:  PL/pgSQL function inline_code_block line 12 at RAISE
+WARNING:  
+WELCOME TO
+ _____ _                               _     ____________  
+|_   _(_)                             | |    |  _  \ ___ \ 
+  | |  _ _ __ ___   ___  ___  ___ __ _| | ___| | | | |_/ / 
+  | | | |  _ ` _ \ / _ \/ __|/ __/ _` | |/ _ \ | | | ___ \ 
+  | | | | | | | | |  __/\__ \ (_| (_| | |  __/ |/ /| |_/ /
+  |_| |_|_| |_| |_|\___||___/\___\__,_|_|\___|___/ \____/
+               Running version 2.0.1
+For more information on TimescaleDB, please visit the following links:
+
+ 1. Getting started: https://docs.timescale.com/getting-started
+ 2. API reference documentation: https://docs.timescale.com/api
+ 3. How TimescaleDB is designed: https://docs.timescale.com/introduction/architecture
+
+Note: TimescaleDB collects anonymous reports to better understand and assist our users.
+For more information and how to disable, please see our docs https://docs.timescaledb.com/using-timescaledb/telemetry.
+
+2021-06-01 21:35:52 KST [75]: [60b629a6.4b-6] postgres@template1,app=psql [00000] LOG:  duration: 1500.819 ms
+2021-06-01 21:35:52 KST [76]: [60b629a7.4c-1] @,app= [XX000] ERROR:  TimescaleDB background worker connected to template database, exiting
+CREATE EXTENSION
+2021-06-01 21:35:52 KST [52]: [60b629a4.34-5] @,app= [00000] LOG:  background worker "TimescaleDB Background Worker Scheduler" (PID 76) exited with exit code 1
+2021-06-01 21:35:52 KST [77]: [60b629a8.4d-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:35:52 KST [77]: [60b629a8.4d-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres application_name=psql
+You are now connected to database "postgres" as user "postgres".
+2021-06-01 21:35:52 KST [75]: [60b629a6.4b-7] postgres@template1,app=psql [00000] LOG:  disconnection: session time: 0:00:01.694 user=postgres database=template1 host=[local]
+SET
+2021-06-01 21:35:52 KST [77]: [60b629a8.4d-3] postgres@postgres,app=psql [00000] LOG:  statement: CREATE EXTENSION timescaledb;
+2021-06-01 21:35:53 KST [77]: [60b629a8.4d-4] postgres@postgres,app=psql [01000] WARNING:  
+	WELCOME TO
+	 _____ _                               _     ____________  
+	|_   _(_)                             | |    |  _  \ ___ \ 
+	  | |  _ _ __ ___   ___  ___  ___ __ _| | ___| | | | |_/ / 
+	  | | | |  _ ` _ \ / _ \/ __|/ __/ _` | |/ _ \ | | | ___ \ 
+	  | | | | | | | | |  __/\__ \ (_| (_| | |  __/ |/ /| |_/ /
+	  |_| |_|_| |_| |_|\___||___/\___\__,_|_|\___|___/ \____/
+	               Running version 2.0.1
+	For more information on TimescaleDB, please visit the following links:
+	
+	 1. Getting started: https://docs.timescale.com/getting-started
+	 2. API reference documentation: https://docs.timescale.com/api
+	 3. How TimescaleDB is designed: https://docs.timescale.com/introduction/architecture
+	
+	Note: TimescaleDB collects anonymous reports to better understand and assist our users.
+	For more information and how to disable, please see our docs https://docs.timescaledb.com/using-timescaledb/telemetry.
+	
+2021-06-01 21:35:53 KST [77]: [60b629a8.4d-5] postgres@postgres,app=psql [01000] CONTEXT:  PL/pgSQL function inline_code_block line 12 at RAISE
+WARNING:  
+WELCOME TO
+ _____ _                               _     ____________  
+|_   _(_)                             | |    |  _  \ ___ \ 
+  | |  _ _ __ ___   ___  ___  ___ __ _| | ___| | | | |_/ / 
+  | | | |  _ ` _ \ / _ \/ __|/ __/ _` | |/ _ \ | | | ___ \ 
+  | | | | | | | | |  __/\__ \ (_| (_| | |  __/ |/ /| |_/ /
+  |_| |_|_| |_| |_|\___||___/\___\__,_|_|\___|___/ \____/
+               Running version 2.0.1
+For more information on TimescaleDB, please visit the following links:
+
+ 1. Getting started: https://docs.timescale.com/getting-started
+ 2. API reference documentation: https://docs.timescale.com/api
+ 3. How TimescaleDB is designed: https://docs.timescale.com/introduction/architecture
+
+Note: TimescaleDB collects anonymous reports to better understand and assist our users.
+For more information and how to disable, please see our docs https://docs.timescaledb.com/using-timescaledb/telemetry.
+
+2021-06-01 21:35:53 KST [77]: [60b629a8.4d-6] postgres@postgres,app=psql [00000] LOG:  duration: 1500.603 ms
+CREATE EXTENSION
+2021-06-01 21:35:53 KST [77]: [60b629a8.4d-7] postgres@postgres,app=psql [00000] LOG:  disconnection: session time: 0:00:01.597 user=postgres database=postgres host=[local]
+2021-06-01 21:35:53 - post_init - Call post init script [ /etc/timescaledb/post_init.d/INIT_DB_SQL.sh ]
+2021-06-01 21:35:53 KST [83]: [60b629a9.53-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:35:53 KST [83]: [60b629a9.53-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres application_name=psql
+2021-06-01 21:35:53 KST [83]: [60b629a9.53-3] postgres@postgres,app=psql [00000] LOG:  statement: CREATE TABLE AUDIT (ID VARCHAR(40) NOT NULL, USERNAME VARCHAR(255), USERAGENT VARCHAR(255), NAMESPACE VARCHAR(255), APIGROUP VARCHAR(255), APIVERSION VARCHAR(32), RESOURCE VARCHAR(64), NAME VARCHAR(255), STAGE VARCHAR(32), STAGETIMESTAMP TIMESTAMPTZ NOT NULL, VERB VARCHAR(32), CODE INT, STATUS VARCHAR(255), REASON VARCHAR(255), MESSAGE VARCHAR(255));
+CREATE TABLE
+ create_hypertable  
+--------------------
+ (1,public,audit,t)
+(1 row)
+
+ add_retention_policy 
+----------------------
+                 1000
+(1 row)
+
+                   alter_job                    
+------------------------------------------------
+ (1,00:10:00,00:01:40,-1,01:00:00,t,,-infinity)
+(1 row)
+
+2021-06-01 21:35:54 KST [83]: [60b629a9.53-4] postgres@postgres,app=psql [00000] LOG:  statement: CREATE TABLE CLUSTER_MEMBER (ID SERIAL, NAMESPACE VARCHAR(255) NOT NULL, CLUSTER VARCHAR(255) NOT NULL, MEMBER_ID VARCHAR(255) NOT NULL, MEMBER_NAME VARCHAR(255), ATTRIBUTE VARCHAR(255), ROLE VARCHAR(255), STATUS VARCHAR(255), CREATEDTIME TIMESTAMP NOT NULL DEFAULT NOW(), UPDATEDTIME TIMESTAMP NOT NULL DEFAULT NOW());
+CREATE TABLE
+2021-06-01 21:35:54 KST [83]: [60b629a9.53-5] postgres@postgres,app=psql [00000] LOG:  statement: ALTER TABLE CLUSTER_MEMBER ADD CONSTRAINT MEMBER_CONSTRAINT UNIQUE (NAMESPACE, CLUSTER, MEMBER_ID, ATTRIBUTE);
+ALTER TABLE
+2021-06-01 21:35:54 KST [83]: [60b629a9.53-6] postgres@postgres,app=psql [00000] LOG:  statement: CREATE UNIQUE INDEX CLUSTER_STATUS ON CLUSTER_MEMBER (NAMESPACE, CLUSTER, STATUS) WHERE ( STATUS = 'owner');
+CREATE INDEX
+2021-06-01 21:35:54 KST [83]: [60b629a9.53-7] postgres@postgres,app=psql [00000] LOG:  statement: CREATE TABLE METERING (ID VARCHAR(64) NOT NULL,NAMESPACE VARCHAR(255) NOT NULL,CPU DOUBLE PRECISION,MEMORY BIGINT,STORAGE BIGINT,GPU DOUBLE PRECISION,PUBLIC_IP INT,PRIVATE_IP INT, TRAFFIC_IN BIGINT, TRAFFIC_OUT BIGINT, METERING_TIME TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,STATUS VARCHAR(255),PRIMARY KEY (ID));
+CREATE TABLE
+2021-06-01 21:35:54 KST [83]: [60b629a9.53-8] postgres@postgres,app=psql [00000] LOG:  statement: ALTER TABLE METERING ADD CONSTRAINT UNIQUE_METERING UNIQUE (NAMESPACE, METERING_TIME);
+ALTER TABLE
+2021-06-01 21:35:54 KST [83]: [60b629a9.53-9] postgres@postgres,app=psql [00000] LOG:  statement: CREATE TABLE METERING_HOUR (ID VARCHAR(64) NOT NULL,NAMESPACE VARCHAR(255) NOT NULL,CPU DOUBLE PRECISION,MEMORY BIGINT,STORAGE BIGINT,GPU DOUBLE PRECISION,PUBLIC_IP INT,PRIVATE_IP INT, TRAFFIC_IN BIGINT, TRAFFIC_OUT BIGINT, METERING_TIME TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,STATUS VARCHAR(255),PRIMARY KEY (ID));
+CREATE TABLE
+2021-06-01 21:35:54 KST [83]: [60b629a9.53-10] postgres@postgres,app=psql [00000] LOG:  statement: ALTER TABLE METERING_HOUR ADD CONSTRAINT UNIQUE_METERING_HOUR UNIQUE (NAMESPACE, METERING_TIME);
+ALTER TABLE
+2021-06-01 21:35:54 KST [83]: [60b629a9.53-11] postgres@postgres,app=psql [00000] LOG:  statement: CREATE TABLE METERING_DAY (ID VARCHAR(64) NOT NULL,NAMESPACE VARCHAR(255) NOT NULL,CPU DOUBLE PRECISION,MEMORY BIGINT,STORAGE BIGINT,GPU DOUBLE PRECISION,PUBLIC_IP INT,PRIVATE_IP INT, TRAFFIC_IN BIGINT, TRAFFIC_OUT BIGINT, METERING_TIME TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,STATUS VARCHAR(255),PRIMARY KEY (ID));
+CREATE TABLE
+2021-06-01 21:35:54 KST [83]: [60b629a9.53-12] postgres@postgres,app=psql [00000] LOG:  statement: ALTER TABLE METERING_DAY ADD CONSTRAINT UNIQUE_METERING_DAY UNIQUE (NAMESPACE, METERING_TIME);
+ALTER TABLE
+2021-06-01 21:35:54 KST [83]: [60b629a9.53-13] postgres@postgres,app=psql [00000] LOG:  statement: CREATE TABLE METERING_MONTH (ID VARCHAR(64) NOT NULL,NAMESPACE VARCHAR(255) NOT NULL,CPU DOUBLE PRECISION,MEMORY BIGINT,STORAGE BIGINT,GPU DOUBLE PRECISION,PUBLIC_IP INT,PRIVATE_IP INT, TRAFFIC_IN BIGINT, TRAFFIC_OUT BIGINT, METERING_TIME TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,STATUS VARCHAR(255),PRIMARY KEY (ID));
+CREATE TABLE
+2021-06-01 21:35:54 KST [83]: [60b629a9.53-14] postgres@postgres,app=psql [00000] LOG:  statement: ALTER TABLE METERING_MONTH ADD CONSTRAINT UNIQUE_METERING_MONTH UNIQUE (NAMESPACE, METERING_TIME);
+ALTER TABLE
+2021-06-01 21:35:54 KST [83]: [60b629a9.53-15] postgres@postgres,app=psql [00000] LOG:  statement: CREATE TABLE METERING_YEAR (ID VARCHAR(64) NOT NULL,NAMESPACE VARCHAR(255) NOT NULL,CPU DOUBLE PRECISION,MEMORY BIGINT,STORAGE BIGINT,GPU DOUBLE PRECISION,PUBLIC_IP INT,PRIVATE_IP INT, TRAFFIC_IN BIGINT, TRAFFIC_OUT BIGINT, METERING_TIME TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,STATUS VARCHAR(255),PRIMARY KEY (ID));
+CREATE TABLE
+2021-06-01 21:35:54 KST [83]: [60b629a9.53-16] postgres@postgres,app=psql [00000] LOG:  statement: ALTER TABLE METERING_YEAR ADD CONSTRAINT UNIQUE_METERING_YEAR UNIQUE (NAMESPACE, METERING_TIME);
+ALTER TABLE
+2021-06-01 21:35:54 KST [83]: [60b629a9.53-17] postgres@postgres,app=psql [00000] LOG:  disconnection: session time: 0:00:00.909 user=postgres database=postgres host=[local]
+server signaled
+2021-06-01 21:35:54 KST [52]: [60b629a4.34-6] @,app= [00000] LOG:  received SIGHUP, reloading configuration files
+2021-06-01 21:35:55 KST [84]: [60b629aa.54-1] @,app= [00000] LOG:  the "timescaledb" extension is not up-to-date
+2021-06-01 21:35:55 KST [84]: [60b629aa.54-2] @,app= [00000] HINT:  The most up-to-date version is 2.3.0, the installed version is 2.0.1.
+2021-06-01 21:35:55 KST [69]: [60b629a6.45-3] postgres@postgres,app=Patroni [00000] LOG:  disconnection: session time: 0:00:05.446 user=postgres database=postgres host=[local]
+2021-06-01 12:35:55,840 WARNING: Could not activate Linux watchdog device: "Can't open watchdog device: [Errno 2] No such file or directory: '/dev/watchdog'"
+2021-06-01 21:35:55 KST [89]: [60b629ab.59-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:35:55 KST [89]: [60b629ab.59-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres application_name=Patroni
+2021-06-01 21:35:56 KST [92]: [60b629ac.5c-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:35:56 KST [92]: [60b629ac.5c-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres application_name=Patroni
+2021-06-01 21:35:56 KST [58]: [60b629a5.3a-1] @,app= [00000] LOG:  checkpoint starting: immediate force wait
+2021-06-01 21:35:57 KST [58]: [60b629a5.3a-2] @,app= [00000] LOG:  checkpoint complete: wrote 618 buffers (15.1%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.742 s, total=1.255 s; sync files=214, longest=0.577 s, average=0.004 s; distance=3988 kB, estimate=3988 kB
+2021-06-01 21:35:57 KST [92]: [60b629ac.5c-3] postgres@postgres,app=Patroni [00000] LOG:  duration: 1269.713 ms  statement: CHECKPOINT
+2021-06-01 21:35:57 KST [92]: [60b629ac.5c-4] postgres@postgres,app=Patroni [00000] LOG:  disconnection: session time: 0:00:01.273 user=postgres database=postgres host=[local]
+2021-06-01 21:36:00 KST [97]: [60b629b0.61-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:36:00 KST [97]: [60b629b0.61-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres application_name=psql
+2021-06-01 21:36:07 KST [107]: [60b629b7.6b-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:36:07 KST [107]: [60b629b7.6b-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2021-06-01 21:36:07 KST [107]: [60b629b7.6b-3] postgres@postgres,app=pg_isready [00000] LOG:  disconnection: session time: 0:00:00.001 user=postgres database=postgres host=[local]
+2021-06-01 21:36:09 KST [89]: [60b629ab.59-3] postgres@postgres,app=Patroni [00000] LOG:  duration: 1984.345 ms  statement: SELECT pg_catalog.pg_create_physical_replication_slot('timescaledb_1', true) WHERE NOT EXISTS (SELECT 1 FROM pg_catalog.pg_replication_slots WHERE slot_type = 'physical' AND slot_name = 'timescaledb_1')
+2021-06-01 21:36:31 KST [117]: [60b629cf.75-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=10.244.49.173 port=32906
+2021-06-01 21:36:31 KST [117]: [60b629cf.75-2] standby@[unknown],app=[unknown] [00000] LOG:  replication connection authorized: user=standby application_name=pg_basebackup SSL enabled (protocol=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384, bits=256, compression=off)
+2021-06-01 21:36:31 KST [58]: [60b629a5.3a-3] @,app= [00000] LOG:  checkpoint starting: force wait
+2021-06-01 21:36:37 KST [130]: [60b629d5.82-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:36:37 KST [130]: [60b629d5.82-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2021-06-01 21:36:37 KST [130]: [60b629d5.82-3] postgres@postgres,app=pg_isready [00000] LOG:  disconnection: session time: 0:00:00.003 user=postgres database=postgres host=[local]
+2021-06-01 21:36:47 KST [58]: [60b629a5.3a-4] @,app= [00000] LOG:  checkpoint complete: wrote 150 buffers (3.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=15.068 s, sync=0.049 s, total=15.784 s; sync files=28, longest=0.026 s, average=0.002 s; distance=5976 kB, estimate=5976 kB
+2021-06-01 21:36:47 KST [135]: [60b629df.87-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=10.244.49.173 port=33018
+2021-06-01 21:36:47 KST [135]: [60b629df.87-2] standby@[unknown],app=[unknown] [00000] LOG:  replication connection authorized: user=standby application_name=pg_basebackup SSL enabled (protocol=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384, bits=256, compression=off)
+2021-06-01 21:36:57 KST [117]: [60b629cf.75-3] standby@[unknown],app=pg_basebackup [00000] LOG:  disconnection: session time: 0:00:26.809 user=standby database= host=10.244.49.173 port=32906
+2021-06-01 21:36:57 KST [135]: [60b629df.87-3] standby@[unknown],app=pg_basebackup [00000] LOG:  disconnection: session time: 0:00:10.465 user=standby database= host=10.244.49.173 port=33018
+2021-06-01 21:37:02 KST [146]: [60b629ee.92-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=10.244.49.173 port=33154
+2021-06-01 21:37:02 KST [146]: [60b629ee.92-2] standby@[unknown],app=[unknown] [00000] LOG:  replication connection authorized: user=standby application_name=timescaledb-1 SSL enabled (protocol=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384, bits=256, compression=off)
+2021-06-01 21:37:07 KST [156]: [60b629f3.9c-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:37:07 KST [156]: [60b629f3.9c-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2021-06-01 21:37:07 KST [156]: [60b629f3.9c-3] postgres@postgres,app=pg_isready [00000] LOG:  disconnection: session time: 0:00:00.027 user=postgres database=postgres host=[local]
+2021-06-01 21:37:37 KST [175]: [60b62a11.af-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:37:37 KST [175]: [60b62a11.af-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2021-06-01 21:37:37 KST [175]: [60b62a11.af-3] postgres@postgres,app=pg_isready [00000] LOG:  disconnection: session time: 0:00:00.001 user=postgres database=postgres host=[local]
+2021-06-01 21:37:42 KST [89]: [60b629ab.59-4] postgres@postgres,app=Patroni [57014] ERROR:  canceling statement due to statement timeout
+2021-06-01 21:37:42 KST [89]: [60b629ab.59-5] postgres@postgres,app=Patroni [57014] STATEMENT:  SELECT pg_catalog.pg_create_physical_replication_slot('timescaledb_2', true) WHERE NOT EXISTS (SELECT 1 FROM pg_catalog.pg_replication_slots WHERE slot_type = 'physical' AND slot_name = 'timescaledb_2')
+2021-06-01 21:37:42 KST [89]: [60b629ab.59-6] postgres@postgres,app=Patroni [00000] LOG:  disconnection: session time: 0:01:46.486 user=postgres database=postgres host=[local]
+2021-06-01 12:37:42,423 ERROR: Failed to create physical replication slot 'timescaledb_2'
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/patroni/postgresql/__init__.py", line 256, in _query
+    cursor.execute(sql, params)
+psycopg2.errors.QueryCanceled: canceling statement due to statement timeout
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/patroni/postgresql/slots.py", line 73, in sync_replication_slots
+    immediately_reserve), name, name)
+  File "/usr/lib/python3/dist-packages/patroni/postgresql/slots.py", line 22, in _query
+    return self._postgresql.query(sql, *params, retry=False)
+  File "/usr/lib/python3/dist-packages/patroni/postgresql/__init__.py", line 274, in query
+    return self._query(sql, *args)
+  File "/usr/lib/python3/dist-packages/patroni/postgresql/__init__.py", line 270, in _query
+    raise PostgresConnectionException('connection problems')
+patroni.exceptions.PostgresConnectionException: 'connection problems'
+2021-06-01 21:37:47 KST [180]: [60b62a1b.b4-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:37:47 KST [180]: [60b62a1b.b4-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres application_name=Patroni
+2021-06-01 21:37:51 KST [182]: [60b62a1f.b6-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=10.244.48.117 port=48936
+2021-06-01 21:37:51 KST [182]: [60b62a1f.b6-2] standby@[unknown],app=[unknown] [00000] LOG:  replication connection authorized: user=standby application_name=pg_basebackup SSL enabled (protocol=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384, bits=256, compression=off)
+2021-06-01 21:37:53 KST [58]: [60b629a5.3a-5] @,app= [00000] LOG:  checkpoint starting: force wait
+2021-06-01 21:37:57 KST [58]: [60b629a5.3a-6] @,app= [00000] LOG:  checkpoint complete: wrote 2 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.252 s, sync=0.020 s, total=4.384 s; sync files=2, longest=0.020 s, average=0.010 s; distance=32768 kB, estimate=32768 kB
+2021-06-01 21:37:57 KST [188]: [60b62a25.bc-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=10.244.48.117 port=49000
+2021-06-01 21:37:57 KST [188]: [60b62a25.bc-2] standby@[unknown],app=[unknown] [00000] LOG:  replication connection authorized: user=standby application_name=pg_basebackup SSL enabled (protocol=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384, bits=256, compression=off)
+2021-06-01 21:37:59 KST [189]: [60b62a27.bd-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=10.244.48.94 port=45814
+2021-06-01 21:37:59 KST [189]: [60b62a27.bd-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres SSL enabled (protocol=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384, bits=256, compression=off)
+2021-06-01 21:38:05 KST [182]: [60b62a1f.b6-3] standby@[unknown],app=pg_basebackup [00000] LOG:  disconnection: session time: 0:00:14.493 user=standby database= host=10.244.48.117 port=48936
+2021-06-01 21:38:06 KST [188]: [60b62a25.bc-3] standby@[unknown],app=pg_basebackup [00000] LOG:  disconnection: session time: 0:00:08.575 user=standby database= host=10.244.48.117 port=49000
+2021-06-01 21:38:07 KST [204]: [60b62a2f.cc-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:38:07 KST [204]: [60b62a2f.cc-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2021-06-01 21:38:07 KST [204]: [60b62a2f.cc-3] postgres@postgres,app=pg_isready [00000] LOG:  disconnection: session time: 0:00:00.001 user=postgres database=postgres host=[local]
+2021-06-01 21:38:22 KST [211]: [60b62a3e.d3-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=10.244.48.117 port=49270
+2021-06-01 21:38:22 KST [211]: [60b62a3e.d3-2] standby@[unknown],app=[unknown] [00000] LOG:  replication connection authorized: user=standby application_name=timescaledb-2 SSL enabled (protocol=TLSv1.3, cipher=TLS_AES_256_GCM_SHA384, bits=256, compression=off)
+2021-06-01 21:38:37 KST [224]: [60b62a4d.e0-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:38:37 KST [224]: [60b62a4d.e0-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2021-06-01 21:38:37 KST [224]: [60b62a4d.e0-3] postgres@postgres,app=pg_isready [00000] LOG:  disconnection: session time: 0:00:00.001 user=postgres database=postgres host=[local]
+2021-06-01 21:39:07 KST [244]: [60b62a6b.f4-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:39:07 KST [244]: [60b62a6b.f4-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2021-06-01 21:39:07 KST [244]: [60b62a6b.f4-3] postgres@postgres,app=pg_isready [00000] LOG:  disconnection: session time: 0:00:00.001 user=postgres database=postgres host=[local]
+2021-06-01 21:39:37 KST [263]: [60b62a89.107-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:39:37 KST [263]: [60b62a89.107-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2021-06-01 21:39:37 KST [263]: [60b62a89.107-3] postgres@postgres,app=pg_isready [00000] LOG:  disconnection: session time: 0:00:00.001 user=postgres database=postgres host=[local]
+2021-06-01 21:40:07 KST [282]: [60b62aa7.11a-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:40:07 KST [282]: [60b62aa7.11a-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2021-06-01 21:40:07 KST [282]: [60b62aa7.11a-3] postgres@postgres,app=pg_isready [00000] LOG:  disconnection: session time: 0:00:00.001 user=postgres database=postgres host=[local]
+2021-06-01 21:40:37 KST [301]: [60b62ac5.12d-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:40:37 KST [301]: [60b62ac5.12d-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2021-06-01 21:40:37 KST [301]: [60b62ac5.12d-3] postgres@postgres,app=pg_isready [00000] LOG:  disconnection: session time: 0:00:00.001 user=postgres database=postgres host=[local]
+2021-06-01 21:41:07 KST [321]: [60b62ae3.141-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:41:07 KST [321]: [60b62ae3.141-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2021-06-01 21:41:07 KST [321]: [60b62ae3.141-3] postgres@postgres,app=pg_isready [00000] LOG:  disconnection: session time: 0:00:00.001 user=postgres database=postgres host=[local]
+2021-06-01 21:41:37 KST [341]: [60b62b01.155-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:41:37 KST [341]: [60b62b01.155-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2021-06-01 21:41:37 KST [341]: [60b62b01.155-3] postgres@postgres,app=pg_isready [00000] LOG:  disconnection: session time: 0:00:00.001 user=postgres database=postgres host=[local]
+2021-06-01 21:42:07 KST [360]: [60b62b1f.168-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:42:07 KST [360]: [60b62b1f.168-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2021-06-01 21:42:07 KST [360]: [60b62b1f.168-3] postgres@postgres,app=pg_isready [00000] LOG:  disconnection: session time: 0:00:00.001 user=postgres database=postgres host=[local]
+2021-06-01 21:42:37 KST [379]: [60b62b3d.17b-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:42:37 KST [379]: [60b62b3d.17b-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2021-06-01 21:42:37 KST [379]: [60b62b3d.17b-3] postgres@postgres,app=pg_isready [00000] LOG:  disconnection: session time: 0:00:00.001 user=postgres database=postgres host=[local]
+2021-06-01 21:42:53 KST [58]: [60b629a5.3a-7] @,app= [00000] LOG:  checkpoint starting: time
+2021-06-01 21:43:05 KST [58]: [60b629a5.3a-8] @,app= [00000] LOG:  checkpoint complete: wrote 69 buffers (1.7%); 0 WAL file(s) added, 0 removed, 0 recycled; write=7.120 s, sync=0.021 s, total=11.725 s; sync files=47, longest=0.013 s, average=0.001 s; distance=16384 kB, estimate=31129 kB
+2021-06-01 21:43:07 KST [399]: [60b62b5b.18f-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:43:07 KST [399]: [60b62b5b.18f-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2021-06-01 21:43:07 KST [399]: [60b62b5b.18f-3] postgres@postgres,app=pg_isready [00000] LOG:  disconnection: session time: 0:00:00.001 user=postgres database=postgres host=[local]
+2021-06-01 21:43:37 KST [418]: [60b62b79.1a2-1] [unknown]@[unknown],app=[unknown] [00000] LOG:  connection received: host=[local]
+2021-06-01 21:43:37 KST [418]: [60b62b79.1a2-2] postgres@postgres,app=[unknown] [00000] LOG:  connection authorized: user=postgres database=postgres application_name=pg_isready
+2021-06-01 21:43:37 KST [418]: [60b62b79.1a2-3] postgres@postgres,app=pg_isready [00000] LOG:  disconnection: session time: 0:00:00.001 user=postgres database=postgres host=[local]

@@ -1,0 +1,313 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  annotations:
+    cert-manager.io/inject-ca-from: hypercloud5-system/hypercloud-multi-operator-serving-cert
+    controller-gen.kubebuilder.io/version: v0.3.0
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apiextensions.k8s.io/v1beta1","kind":"CustomResourceDefinition","metadata":{"annotations":{"cert-manager.io/inject-ca-from":"hypercloud5-system/hypercloud-multi-operator-serving-cert","controller-gen.kubebuilder.io/version":"v0.3.0"},"creationTimestamp":null,"name":"clustermanagers.cluster.tmax.io"},"spec":{"additionalPrinterColumns":[{"JSONPath":".spec.provider","description":"provider","name":"Provider","type":"string"},{"JSONPath":".spec.version","description":"k8s version","name":"Version","type":"string"},{"JSONPath":".status.ready","description":"is running","name":"Ready","type":"string"},{"JSONPath":".spec.masterNum","description":"replica number of master","name":"MasterNum","type":"string"},{"JSONPath":".status.masterRun","description":"running of master","name":"MasterRun","type":"string"},{"JSONPath":".spec.workerNum","description":"replica number of worker","name":"WorkerNum","type":"string"},{"JSONPath":".status.workerRun","description":"running of worker","name":"WorkerRun","type":"string"},{"JSONPath":".status.phase","description":"cluster status phase","name":"Phase","type":"string"}],"group":"cluster.tmax.io","names":{"kind":"ClusterManager","listKind":"ClusterManagerList","plural":"clustermanagers","shortNames":["clm"],"singular":"clustermanager"},"scope":"Namespaced","subresources":{"status":{}},"validation":{"openAPIV3Schema":{"description":"ClusterManager is the Schema for the clustermanagers API","properties":{"apiVersion":{"description":"APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources","type":"string"},"kind":{"description":"Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds","type":"string"},"metadata":{"type":"object"},"spec":{"description":"FakeObjectMeta    `json:\"fakeMetadata,omitempty\"`","properties":{"masterNum":{"description":"The number of master node","type":"integer"},"masterType":{"description":"The type of VM for master node","type":"string"},"provider":{"description":"The name of cloud provider where VM is created","type":"string"},"region":{"description":"The region where VM is working","type":"string"},"sshKey":{"description":"The ssh key info to access VM","type":"string"},"version":{"description":"The version of kubernetes","type":"string"},"workerNum":{"description":"The number of worker node","type":"integer"},"workerType":{"description":"The type of VM for worker node","type":"string"}},"type":"object"},"status":{"description":"ClusterManagerStatus defines the observed state of ClusterManager","properties":{"masterRun":{"type":"integer"},"nodes":{"items":{"properties":{"ip":{"type":"string"},"isMaster":{"type":"boolean"},"name":{"type":"string"},"resources":{"items":{"properties":{"capacity":{"type":"string"},"type":{"type":"string"},"usage":{"type":"string"}},"type":"object"},"type":"array"}},"type":"object"},"type":"array"},"observedGeneration":{"description":"ObservedGeneration is the latest generation observed by the controller.","format":"int64","type":"integer"},"phase":{"type":"string"},"provider":{"type":"string"},"ready":{"type":"boolean"},"version":{"type":"string"},"workerRun":{"type":"integer"}},"type":"object"}},"type":"object"}},"version":"v1alpha1","versions":[{"name":"v1alpha1","served":true,"storage":true}]},"status":{"acceptedNames":{"kind":"","plural":""},"conditions":[],"storedVersions":[]}}
+  creationTimestamp: "2021-05-31T08:59:36Z"
+  generation: 1
+  managedFields:
+  - apiVersion: apiextensions.k8s.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:acceptedNames:
+          f:kind: {}
+          f:listKind: {}
+          f:plural: {}
+          f:shortNames: {}
+          f:singular: {}
+        f:conditions: {}
+    manager: kube-apiserver
+    operation: Update
+    time: "2021-05-31T08:59:36Z"
+  - apiVersion: apiextensions.k8s.io/v1beta1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:cert-manager.io/inject-ca-from: {}
+          f:controller-gen.kubebuilder.io/version: {}
+          f:kubectl.kubernetes.io/last-applied-configuration: {}
+      f:spec:
+        f:additionalPrinterColumns: {}
+        f:conversion:
+          .: {}
+          f:strategy: {}
+        f:group: {}
+        f:names:
+          f:kind: {}
+          f:listKind: {}
+          f:plural: {}
+          f:shortNames: {}
+          f:singular: {}
+        f:preserveUnknownFields: {}
+        f:scope: {}
+        f:subresources:
+          .: {}
+          f:status: {}
+        f:validation:
+          .: {}
+          f:openAPIV3Schema:
+            .: {}
+            f:description: {}
+            f:properties:
+              .: {}
+              f:apiVersion:
+                .: {}
+                f:description: {}
+                f:type: {}
+              f:kind:
+                .: {}
+                f:description: {}
+                f:type: {}
+              f:metadata:
+                .: {}
+                f:type: {}
+              f:spec:
+                .: {}
+                f:description: {}
+                f:properties:
+                  .: {}
+                  f:masterNum:
+                    .: {}
+                    f:description: {}
+                    f:type: {}
+                  f:masterType:
+                    .: {}
+                    f:description: {}
+                    f:type: {}
+                  f:provider:
+                    .: {}
+                    f:description: {}
+                    f:type: {}
+                  f:region:
+                    .: {}
+                    f:description: {}
+                    f:type: {}
+                  f:sshKey:
+                    .: {}
+                    f:description: {}
+                    f:type: {}
+                  f:version:
+                    .: {}
+                    f:description: {}
+                    f:type: {}
+                  f:workerNum:
+                    .: {}
+                    f:description: {}
+                    f:type: {}
+                  f:workerType:
+                    .: {}
+                    f:description: {}
+                    f:type: {}
+                f:type: {}
+              f:status:
+                .: {}
+                f:description: {}
+                f:properties:
+                  .: {}
+                  f:masterRun:
+                    .: {}
+                    f:type: {}
+                  f:nodes:
+                    .: {}
+                    f:items: {}
+                    f:type: {}
+                  f:observedGeneration:
+                    .: {}
+                    f:description: {}
+                    f:format: {}
+                    f:type: {}
+                  f:phase:
+                    .: {}
+                    f:type: {}
+                  f:provider:
+                    .: {}
+                    f:type: {}
+                  f:ready:
+                    .: {}
+                    f:type: {}
+                  f:version:
+                    .: {}
+                    f:type: {}
+                  f:workerRun:
+                    .: {}
+                    f:type: {}
+                f:type: {}
+            f:type: {}
+        f:version: {}
+        f:versions: {}
+      f:status:
+        f:storedVersions: {}
+    manager: kubectl-client-side-apply
+    operation: Update
+    time: "2021-05-31T08:59:36Z"
+  name: clustermanagers.cluster.tmax.io
+  resourceVersion: "7082694"
+  selfLink: /apis/apiextensions.k8s.io/v1/customresourcedefinitions/clustermanagers.cluster.tmax.io
+  uid: 5fa0fa51-96f7-4e89-903c-dd44073db781
+spec:
+  conversion:
+    strategy: None
+  group: cluster.tmax.io
+  names:
+    kind: ClusterManager
+    listKind: ClusterManagerList
+    plural: clustermanagers
+    shortNames:
+    - clm
+    singular: clustermanager
+  preserveUnknownFields: true
+  scope: Namespaced
+  versions:
+  - additionalPrinterColumns:
+    - description: provider
+      jsonPath: .spec.provider
+      name: Provider
+      type: string
+    - description: k8s version
+      jsonPath: .spec.version
+      name: Version
+      type: string
+    - description: is running
+      jsonPath: .status.ready
+      name: Ready
+      type: string
+    - description: replica number of master
+      jsonPath: .spec.masterNum
+      name: MasterNum
+      type: string
+    - description: running of master
+      jsonPath: .status.masterRun
+      name: MasterRun
+      type: string
+    - description: replica number of worker
+      jsonPath: .spec.workerNum
+      name: WorkerNum
+      type: string
+    - description: running of worker
+      jsonPath: .status.workerRun
+      name: WorkerRun
+      type: string
+    - description: cluster status phase
+      jsonPath: .status.phase
+      name: Phase
+      type: string
+    name: v1alpha1
+    schema:
+      openAPIV3Schema:
+        description: ClusterManager is the Schema for the clustermanagers API
+        properties:
+          apiVersion:
+            description: 'APIVersion defines the versioned schema of this representation
+              of an object. Servers should convert recognized schemas to the latest
+              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            type: string
+          kind:
+            description: 'Kind is a string value representing the REST resource this
+              object represents. Servers may infer this from the endpoint the client
+              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            type: string
+          metadata:
+            type: object
+          spec:
+            description: FakeObjectMeta    `json:"fakeMetadata,omitempty"`
+            properties:
+              masterNum:
+                description: The number of master node
+                type: integer
+              masterType:
+                description: The type of VM for master node
+                type: string
+              provider:
+                description: The name of cloud provider where VM is created
+                type: string
+              region:
+                description: The region where VM is working
+                type: string
+              sshKey:
+                description: The ssh key info to access VM
+                type: string
+              version:
+                description: The version of kubernetes
+                type: string
+              workerNum:
+                description: The number of worker node
+                type: integer
+              workerType:
+                description: The type of VM for worker node
+                type: string
+            type: object
+          status:
+            description: ClusterManagerStatus defines the observed state of ClusterManager
+            properties:
+              masterRun:
+                type: integer
+              nodes:
+                items:
+                  properties:
+                    ip:
+                      type: string
+                    isMaster:
+                      type: boolean
+                    name:
+                      type: string
+                    resources:
+                      items:
+                        properties:
+                          capacity:
+                            type: string
+                          type:
+                            type: string
+                          usage:
+                            type: string
+                        type: object
+                      type: array
+                  type: object
+                type: array
+              observedGeneration:
+                description: ObservedGeneration is the latest generation observed
+                  by the controller.
+                format: int64
+                type: integer
+              phase:
+                type: string
+              provider:
+                type: string
+              ready:
+                type: boolean
+              version:
+                type: string
+              workerRun:
+                type: integer
+            type: object
+        type: object
+    served: true
+    storage: true
+    subresources:
+      status: {}
+status:
+  acceptedNames:
+    kind: ClusterManager
+    listKind: ClusterManagerList
+    plural: clustermanagers
+    shortNames:
+    - clm
+    singular: clustermanager
+  conditions:
+  - lastTransitionTime: "2021-05-31T08:59:36Z"
+    message: no conflicts found
+    reason: NoConflicts
+    status: "True"
+    type: NamesAccepted
+  - lastTransitionTime: "2021-05-31T08:59:36Z"
+    message: the initial names have been accepted
+    reason: InitialNamesAccepted
+    status: "True"
+    type: Established
+  storedVersions:
+  - v1alpha1

@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: test-by-cho
+  namespace: default
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: namespace-listget
+subjects:
+- apiGroup: rbac.authorization.k8s.io
+  kind: User
+  name: sangwon_cho@tmax.co.kr
