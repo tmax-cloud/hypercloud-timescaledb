@@ -5,6 +5,18 @@ Please see the included NOTICE for copyright information and LICENSE for a copy 
 
 # TimescaleDB Single
 
+## Easy usage
+
+```bash
+./generate_kustomization.sh timescaledb
+```
+```bash
+kubectl kustomize ./kustomize/timescaledb | kubectl apply -f -
+```
+```bash
+helm install timescaledb ./ -n hypercloud5-system
+```
+
 ##### Table of Contents
 - [Introduction](#introduction)
 - [Installing](#installing)
