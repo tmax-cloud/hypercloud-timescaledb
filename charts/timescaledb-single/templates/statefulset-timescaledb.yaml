@@ -518,6 +518,7 @@ spec:
         secret:
           secretName:  {{ template "secrets_certificate" . }}
           defaultMode: 416 # 0640 permissions
+          optional: true
       - name: pgbackrest-bootstrap
         secret:
           secretName: {{ .Values.bootstrapFromBackup.secretName }}

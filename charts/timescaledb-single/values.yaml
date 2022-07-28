@@ -19,8 +19,8 @@ version:
 image:
   # Image was built from
   # https://github.com/timescale/timescaledb-docker-ha
-  repository: timescaledev/timescaledb-ha
-  tag: pg12-ts2.0-latest
+  repository: tmaxcloudck/timescaledb-cron
+  tag: b5.0.0.0
   pullPolicy: Always
 
 # These secrets should exist before the Helm is used to deploy this TimescaleDB.
@@ -180,10 +180,12 @@ patroni:
           log_statement: ddl
           max_connections: 100
           max_prepared_transactions: 150
-          shared_preload_libraries: timescaledb,pg_stat_statements
-          ssl: 'on'
-          ssl_cert_file: '/etc/certificate/tls.crt'
-          ssl_key_file: '/etc/certificate/tls.key'
+          shared_preload_libraries: timescaledb,pg_stat_statements,pg_cron
+          cron.database_name: postgres
+          ssl: 'off'
+          # ssl_cert_file: '/etc/certificate/tls.crt'
+          # ssl_key_file: '/etc/certificate/tls.key'
+          listen_addresses: '*'
           tcp_keepalives_idle: 900
           tcp_keepalives_interval: 100
           temp_file_limit: 1GB
@@ -233,6 +235,7 @@ patroni:
     - hostssl   all             all                ::1/128            md5
     - hostssl   replication     standby            all                md5
     - hostssl   all             all                all                md5
+    - host      all             all                0.0.0.0/0          md5
     use_unix_socket: true
   restapi:
     listen: 0.0.0.0:8008
